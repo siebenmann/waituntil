@@ -1,0 +1,16 @@
+waituntil is a simple (Unix) utility to sleep until a specific time is
+reached (as opposed to the sleep command, which waits for a specific
+duration).
+
+usage:	waituntil [-v] <WHEN>
+
+<WHEN> may be:		HH:MM[:SS]
+			[[YYYY-]MM-]DD [HH:MM[:SS]]
+
+In the first form, a time in the past of today is taken to be that
+time tomorrow.
+
+Author: Chris Siebenmann
+https://github.com/siebenmann/waituntil
+
+Copyright: GPL v3
