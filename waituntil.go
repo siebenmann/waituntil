@@ -153,6 +153,9 @@ func main() {
 	tgt, e := parseTime(tstr)
 	if e != nil {
 		fmt.Fprintf(os.Stderr, "%s: cannot parse target time\n", os.Args[0])
+		if flag.NArg() > 1 {
+			fmt.Fprintf(os.Stderr, "Usage: %s [-v] TIMESPEC\n", os.Args[0])
+		}
 		return
 	}
 
