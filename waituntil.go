@@ -72,10 +72,11 @@ var specs = []tSpec{
 func parseHHMM(tspec string) (time.Time, error) {
 	var hr, min, secs int
 	var tgt time.Time
-	_, e := fmt.Sscanf(tspec, "%d:%d:%d", &hr, &min, &secs)
+	ntspec := tspec + "\n"
+	_, e := fmt.Sscanf(ntspec, "%d:%d:%d\n", &hr, &min, &secs)
 	if e != nil {
 		secs = 0
-		_, e = fmt.Sscanf(tspec, "%d:%d", &hr, &min)
+		_, e = fmt.Sscanf(ntspec, "%d:%d\n", &hr, &min)
 		if e != nil {
 			return tgt, e
 		}
