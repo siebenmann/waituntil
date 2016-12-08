@@ -81,6 +81,9 @@ func parseHHMM(tspec string) (time.Time, error) {
 			return tgt, e
 		}
 	}
+	if hr > 23 || min > 59 || secs > 59 || hr < 0 || min < 0 || secs < 0 {
+		return tgt, errors.New("value out of range")
+	}
 	// Get the current year, month, day, and location, and create a new
 	// time from it using our hours, minutes, and seconds. There is
 	// probably an easier way to do this.
